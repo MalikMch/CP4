@@ -19,14 +19,14 @@ const View = () => {
         <div style={{ marginTop: "150px" }}>
             <div className="card">
                 <div className="card-header">
-                    <p>User Detail</p>
+                    <p>Détails du contact</p>
                 </div>
                 <div className="container">
                     <strong>ID: </strong>
                     <span>{id}</span>
                     <br />
                     <br />
-                    <strong>Name: </strong>
+                    <strong>Nom: </strong>
                     <span>{user.name}</span>
                     <br />
                     <br />
@@ -39,7 +39,7 @@ const View = () => {
                     <br />
                     <br />
                     <Link to="/">
-                        <div className="btn btn-edit">Go Back</div>
+                        <div className="btn btn-edit">Retour</div>
                     </Link>
                 </div>
             </div>

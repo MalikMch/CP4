@@ -30,7 +30,7 @@ const AddEdit = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!name || !email || !contact) {
-            toast.error("Please put a value in the input fields");
+            toast.error("Veuillez mettre une valeur dans les champs de saisie");
         } else {
             if (!id) {
                 axios
@@ -43,7 +43,7 @@ const AddEdit = () => {
                     setState({ name: "", email: "", contact: "" });
                 })
                 .catch((err) => toast.error(err.response.data));
-                toast.success("Contact Added");
+                toast.success("Contact Ajouté");
             } else {
                 axios
                 .put(`http://localhost:5500/api/update/${id}`, {
@@ -55,7 +55,7 @@ const AddEdit = () => {
                     setState({ name: "", email: "", contact: "" });
                 })
                 .catch((err) => toast.error(err.response.data));
-                toast.success("Contact Updated");
+                toast.success("Contact mis à jour");
             }
             setTimeout(() => navigate("/"), 500);
         }
@@ -76,12 +76,12 @@ const AddEdit = () => {
             }}
             onSubmit={ handleSubmit }
             >
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name">Nom</label>
                 <input
                 type="text"
                 id="name"
                 name="name"
-                placeholder="Your name..."
+                placeholder="Nom..."
                 value={ name || "" }
                 onChange={ handleInputChange }
             />
@@ -90,7 +90,7 @@ const AddEdit = () => {
                 type="email"
                 id="email"
                 name="email"
-                placeholder="Your email..."
+                placeholder="Email..."
                 value={ email || "" }
                 onChange={ handleInputChange }
             />
@@ -103,9 +103,9 @@ const AddEdit = () => {
                 value={ contact || "" }
                 onChange={ handleInputChange }
             />
-            <input type="submit" value={ id ? "Update" : "Save" } />
+            <input type="submit" value={ id ? "Mettre à jour" : "Enregistrer" } />
             <Link to="/">
-                <input type="button" value="Go Back" />
+                <input type="button" value="Retour" />
             </Link>
             </form>
         </div>
